@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wie ich endlich aufgehört habe, jeden Abend ums Essen zu kämpfen</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#D3C5B6;
+    --secondary:#375230;
+    --heading:#484237;
+    --body:#4a4540;
+    --primary-dark:#b9a890;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:#FFFFFF;
+    color:#1f1c19;
+    font-size:18px;
+    line-height:1.7;
+    margin:0;
+    padding-bottom:96px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{color:var(--heading);}
+  h1{font-size:clamp(2.15rem,5vw,3.6rem)!important;font-weight:700!important;line-height:1.1!important;}
+  h2{font-size:clamp(1.75rem,3.6vw,2.5rem)!important;font-weight:700!important;line-height:1.15!important;}
+  h3{font-size:clamp(1.35rem,2.4vw,1.65rem)!important;font-weight:700!important;line-height:1.2!important;}
+  p{margin:0 0 1.1em;}
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px;}
+  .section{padding:80px 0;}
+  @media(max-width:640px){.section{padding:56px 0;}body{font-size:17px;}}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--primary-dark);}
+  .sec-id{scroll-margin-top:24px;}
+  a.tlink{color:var(--primary-dark);text-decoration:none;}
+  a.tlink:hover{text-decoration:underline;}
+  .fig{margin:48px 0 24px;}
+  .fig img{display:block;width:100%;border-radius:14px;}
+  .fig.ratio16 .imgbox{aspect-ratio:16/9;width:100%;overflow:hidden;border-radius:14px;}
+  .fig.ratio16 .imgbox img{width:100%;height:100%;object-fit:cover;border-radius:14px;}
+  .cap{font-size:13.5px;color:#8a837b;margin-top:12px;line-height:1.5;}
+  .toc{background:#f7f4f0;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:30px;}
+  .toc ol{list-style:none;margin:0;padding:0;}
+  .toc li{display:flex;gap:14px;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(0,0,0,.05);}
+  .toc li:last-child{border-bottom:none;}
+  .toc .num{font-weight:700;color:var(--primary-dark);font-size:14px;min-width:26px;}
+  .reclist,.faillist{list-style:none;margin:28px 0 0;padding:0;}
+  .reclist li,.faillist li{display:flex;gap:16px;align-items:flex-start;padding:14px 0;}
+  .ic{width:34px;height:34px;aspect-ratio:1;border-radius:50%;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;background:var(--primary);}
+  .ic svg{width:17px;height:17px;}
+  .reclist b,.faillist b{color:var(--heading);}
+  .callout{background:rgba(211,197,182,.22);border-left:4px solid var(--primary-dark);border-radius:12px;padding:26px 28px;margin:36px 0;font-size:20px;line-height:1.55;color:var(--heading);font-style:italic;}
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;}
+  @media(max-width:760px){.feat-grid{grid-template-columns:1fr;}}
+  .feat{border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px;box-shadow:0 4px 24px rgba(0,0,0,.05);}
+  .feat .badge{width:42px;height:42px;aspect-ratio:1;border-radius:50%;background:var(--secondary);color:#fff;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-bottom:16px;}
+  .feat .tag{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--primary-dark);font-weight:600;display:block;margin-bottom:6px;}
+  .tl{margin-top:40px;}
+  .tl-item{display:flex;gap:18px;padding-bottom:30px;position:relative;}
+  .tl-item:not(:last-child)::before{content:"";position:absolute;left:19px;top:42px;bottom:0;width:2px;background:rgba(211,197,182,.6);}
+  .tl-num{width:40px;height:40px;aspect-ratio:1;border-radius:50%;background:var(--primary);color:var(--heading);font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .secbg{background:#f7f4f0;}
+  .offer{background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:24px;box-shadow:0 10px 50px rgba(0,0,0,.09);padding:38px 32px;}
+  @media(max-width:640px){.offer{padding:28px 20px;}}
+  .prod-img{aspect-ratio:1/1;width:100%;max-width:400px;margin:0 auto 28px;display:block;border-radius:16px;object-fit:cover;box-shadow:0 8px 30px rgba(0,0,0,.12);}
+  .benf{list-style:none;margin:0 0 26px;padding:0;}
+  .benf li{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.05);}
+  .benf li:last-child{border-bottom:none;}
+  .chk{width:26px;height:26px;aspect-ratio:1;border-radius:50%;background:var(--primary);flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;}
+  .chk svg{width:13px;height:13px;}
+  .price-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:8px 0 4px;}
+  .price-now{font-size:clamp(2.2rem,7vw,2.6rem);font-weight:700;color:var(--heading);white-space:nowrap;}
+  .price-old{font-size:1.25rem;color:#9a938b;text-decoration:line-through;white-space:nowrap;}
+  .save{display:inline-block;background:var(--secondary);color:#fff;font-size:12.5px;font-weight:600;padding:4px 12px;border-radius:20px;}
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--secondary);color:#fff;font-weight:700;font-size:18px;padding:17px 28px;border-radius:13px;text-decoration:none;box-shadow:0 6px 20px rgba(55,82,48,.28);transition:.18s;border:none;cursor:pointer;}
+  .btn:hover{background:#2c4226;transform:translateY(-1px);}
+  .btn svg{width:18px;height:18px;}
+  .trust{list-style:none;margin:22px 0 0;padding:0;}
+  .trust li{display:flex;gap:10px;align-items:center;padding:6px 0;font-size:15px;color:var(--body);}
+  .trust svg{width:16px;height:16px;flex-shrink:0;}
+  .meta-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px;}
+  .meta-cell{border:1px solid rgba(0,0,0,.1);border-radius:10px;padding:12px 8px;text-align:center;}
+  .meta-cell .big{font-weight:700;color:var(--heading);font-size:15px;}
+  .meta-cell .sm{font-size:11.5px;color:#8a837b;}
+  .stars{display:inline-flex;gap:2px;}
+  .stars svg{width:18px;height:18px;}
+  .rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px;}
+  @media(max-width:680px){.rev-grid{grid-template-columns:1fr;}}
+  .rev{border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:22px;box-shadow:0 3px 16px rgba(0,0,0,.04);}
+  .rev-head{display:flex;gap:12px;align-items:center;margin-bottom:12px;}
+  .av{width:44px;height:44px;aspect-ratio:1;border-radius:50%;overflow:hidden;flex-shrink:0;}
+  .av img{width:100%;height:100%;object-fit:cover;}
+  .dist{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:13px;color:#8a837b;}
+  .bar{flex:1;height:8px;background:#eee;border-radius:5px;overflow:hidden;}
+  .bar span{display:block;height:100%;background:var(--primary-dark);}
+  .faq-item{border-bottom:1px solid rgba(0,0,0,.1);}
+  .faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 0;font-size:18px;font-weight:600;color:var(--heading);display:flex;justify-content:space-between;gap:16px;cursor:pointer;font-family:inherit;}
+  .faq-q svg{width:20px;height:20px;flex-shrink:0;transition:.25s;}
+  .faq-q.open svg{transform:rotate(180deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .faq-a p{padding:0 0 20px;color:var(--body);}
+  .final{background:var(--primary);padding:72px 0;text-align:center;}
+  .final h2{color:var(--heading);}
+  .sticky{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-top:1px solid rgba(0,0,0,.08);box-shadow:0 -4px 20px rgba(0,0,0,.07);padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+  .sticky .sval{font-size:13.5px;color:var(--body);line-height:1.3;}
+  .sticky .sval b{color:var(--heading);}
+  .sticky a{flex-shrink:0;background:var(--secondary);color:#fff;font-weight:700;padding:13px 24px;border-radius:11px;text-decoration:none;font-size:15px;}
+  @media(max-width:600px){.sticky{flex-direction:column;padding:10px 14px;}.sticky a{width:100%;text-align:center;}.sticky .sval{display:none;}}
+  .disclbar{background:#efe9e3;color:#8a837b;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;text-align:center;padding:7px;}
+  .meta-line{display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:#8a837b;font-size:14.5px;margin-top:22px;}
+  .meta-line .mav{width:40px;height:40px;aspect-ratio:1;border-radius:50%;overflow:hidden;flex-shrink:0;}
+  .meta-line .mav img{width:100%;height:100%;object-fit:cover;}
+  @media(prefers-reduced-motion:no-preference){
+    .fade{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+    .fade.in{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclbar">Anzeige</div>
+
+<header class="wrap" style="padding-top:48px;padding-bottom:8px;">
+  <div class="eyebrow">Familienalltag &middot; Erfahrungsbericht</div>
+  <h1 class="text-4xl md:text-6xl font-bold leading-tight" style="margin:14px 0 18px;">Drei Jahre lang hat mein Sohn fast nichts gegessen &ndash; bis ich an einem Dienstagabend etwas anderes probierte</h1>
+  <p style="font-size:20px;color:var(--body);">Ich dachte ehrlich, ich sei eine schlechte Mutter. Jeden Abend dasselbe Drama am Esstisch. Dann fiel mir auf, dass nicht mein Kind das Problem war &ndash; sondern meine Rezepte.</p>
+  <div class="meta-line">
+    <span class="mav"><img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/littlebites-ad/author-avatar_1782513127539.jpg" alt="Autorin Lena B."></span>
+    <span>Von <b style="color:var(--heading);">Lena B.</b></span>
+    <span>&middot; 14. Februar 2025</span>
+    <span>&middot; 9 Min. Lesezeit</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <figure class="fig ratio16 fade">
+    <div class="imgbox">
+      <img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/littlebites-ad/hero_1782513127539.png" alt="Kind schiebt am Esstisch den Teller weg">
+    </div>
+    <figcaption class="cap">Genau dieser Moment &ndash; jeden Abend aufs Neue. Irgendwann hatte ich keine Kraft mehr daf&uuml;r.</figcaption>
+  </figure>
+</div>
+
+<div class="wrap">
+  <nav class="toc fade" aria-label="Inhalt">
+    <div class="eyebrow" style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      Inhalt
+    </div>
+    <ol>
+      <li><span class="num">01</span><a class="tlink" href="#hook">Wie jeder Abend bei uns aussah</a></li>
+      <li><span class="num">02</span><a class="tlink" href="#kennen">Vielleicht kennst du das auch</a></li>
+      <li><span class="num">03</span><a class="tlink" href="#kosten">Was es wirklich mit uns gemacht hat</a></li>
+      <li><span class="num">04</span><a class="tlink" href="#versuche">Alles, was ich vorher vergeblich probiert habe</a></li>
+      <li><span class="num">05</span><a class="tlink" href="#tiefpunkt">Der Abend, an dem ich aufgeben wollte</a></li>
+      <li><span class="num">06</span><a class="tlink" href="#entdeckung">Die kleine Erkenntnis, die alles ver&auml;nderte</a></li>
+      <li><span class="num">07</span><a class="tlink" href="#funktioniert">Warum genau das funktioniert</a></li>
+      <li><span class="num">08</span><a class="tlink" href="#produkt">Was littlebites ist</a></li>
+      <li><span class="num">09</span><a class="tlink" href="#verlauf">Wie sich die Wochen ver&auml;nderten</a></li>
+      <li><span class="num">10</span><a class="tlink" href="#stimmen">Was andere Eltern erlebt haben</a></li>
+      <li><span class="num">11</span><a class="tlink" href="#offer">Wo du es bekommst</a></li>
+      <li><span class="num">12</span><a class="tlink" href="#faq">H&auml;ufige Fragen</a></li>
+    </ol>
+  </nav>
+</div>
+
+<section id="hook" class="section sec-id">
+  <div class="wrap fade">
+    <h2 class="text-3xl md:text-4xl font-bold">Wie jeder Abend bei uns aussah</h2>
+    <p>Es war kurz nach halb sechs. Ich kam mit dem letzten bisschen Energie nach Hause, das mir ein Arbeitstag noch &uuml;brig gelassen hatte, und wusste schon, was kommt: die n&auml;chste Runde am Esstisch. Mein Sohn Mats, damals drei Jahre alt, sa&szlig; auf seinem Stuhl, und ich stand in der K&uuml;che und versuchte zu raten, was er heute vielleicht essen w&uuml;rde. Vielleicht.</p>
+    <p>Ich stellte ihm einen Teller hin. Er schaute ihn an, schob ihn ein paar Zentimeter von sich weg und sagte mit dieser ruhigen Endg&uuml;ltigkeit, die nur kleine Kinder hinbekommen: &bdquo;Mag ich nicht.&ldquo; Er hatte nicht einmal probiert. Ich atmete tief durch, blieb freundlich, schlug etwas anderes vor. Wieder ein Kopfsch&uuml;tteln.</p>
+    <p>Am Ende, jeden Abend, landeten wir bei denselben zwei Gerichten, die er &uuml;berhaupt anr&uuml;hrte. Nudeln mit Butter. Oder Toast. Ich wusste, dass das nicht reicht &ndash; kein Gem&uuml;se, keine Abwechslung, nichts, was man guten Gewissens &bdquo;Abendessen&ldquo; nennt. Aber ich war zu m&uuml;de, um nochmal zu k&auml;mpfen.</p>
+    <p>Und das Schlimmste war nicht der Teller. Es war das Gef&uuml;hl danach. Dieses leise &bdquo;Ich mache irgendetwas falsch&ldquo;, das mich noch beim Einschlafen begleitete.</p>
+  </div>
+</section>
+
+<section id="kennen" class="section sec-id secbg">
+  <div class="wrap fade">
+    <div class="eyebrow">Wiedererkennung</div>
+    <h2 class="text-3xl md:text-4xl font-bold" style="margin-top:8px;">Vielleicht kennst du das auch</h2>
+    <p style="margin-top:18px;">Wenn du berufst&auml;tig bist und ein w&auml;hlerisches Kleinkind zwischen zwei und f&uuml;nf Jahren hast, dann gibt es ein paar Momente, die du wahrscheinlich genauso erlebst:</p>
+    <ul class="reclist">
+      <li>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div><b>Du kochst etwas Gesundes &ndash; und es bleibt komplett unber&uuml;hrt.</b> Eine halbe Stunde Aufwand, und am Ende landet alles im M&uuml;ll.</div>
+      </li>
+      <li>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div><b>Du servierst seit Wochen dieselben zwei, drei Gerichte</b>, weil du genau wei&szlig;t, dass alles andere abgelehnt wird.</div>
+      </li>
+      <li>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div><b>Du suchst abends im Internet nach Rezepten</b> und findest entweder etwas viel zu Aufwendiges oder etwas, von dem du sofort wei&szlig;t: &bdquo;Das r&uuml;hrt er nie an.&ldquo;</div>
+      </li>
+      <li>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div><b>Das Essen wird zum Verhandeln</b> &ndash; ein Bissen f&uuml;r Mama, ein Bissen f&uuml;r Papa &ndash; und du hasst, dass es so weit gekommen ist.</div>
+      </li>
+      <li>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div><b>Du fragst dich heimlich, ob du etwas falsch machst</b> &ndash; obwohl andere Eltern dir versichern, dass &bdquo;das schon wieder vorbeigeht&ldquo;.</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="kosten" class="section sec-id">
+  <div class="wrap fade">
+    <h2 class="text-3xl md:text-4xl font-bold">Was es wirklich mit uns gemacht hat</h2>
+    <p>Anfangs redete ich es mir klein. &bdquo;Phase&ldquo;, sagte ich mir. &bdquo;Geht vorbei.&ldquo; Aber die Phase wurde Monate, und die Monate wurden ein Jahr, und ich merkte, wie sich etwas in unseren Abenden festsetzte, das eigentlich nicht dorthin geh&ouml;rte: Anspannung.</p>
+    <p>Schon nachmittags fing ich an, mir Sorgen zu machen, was am Abend wieder passieren w&uuml;rde. Die letzte Stunde vor dem Essen war keine sch&ouml;ne Familienzeit mehr, sondern eine Vorbereitung auf den n&auml;chsten Konflikt. Mein Mann und ich gerieten dar&uuml;ber aneinander &ndash; nicht, weil wir uns nicht einig waren, sondern weil wir beide einfach ersch&ouml;pft waren.</p>
+    <p>Und dann war da die Sorge um Mats selbst. Er bekam kaum Gem&uuml;se, kaum Abwechslung. Ich wusste, dass eine einseitige Ern&auml;hrung in diesem Alter nicht egal ist. Aber jedes Mal, wenn ich etwas Neues versuchte und scheiterte, wurde es schlimmer &ndash; nicht besser.</p>
+    <figure class="fig ratio16">
+      <div class="imgbox">
+        <img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/littlebites-ad/agitation_1782513127539.png" alt="Unber&uuml;hrter Teller gesundes Essen am Abend">
+      </div>
+      <figcaption class="cap">Das war Alltag: gekocht, hingestellt, kalt geworden. Und jedes Mal ein St&uuml;ck Zuversicht weniger.</figcaption>
+    </figure>
+    <p>Das eigentliche Problem war nicht ein einzelner Abend. Es war, dass sich diese kleinen Niederlagen aufsummierten, bis ich mich als Mutter dauerhaft unzul&auml;nglich f&uuml;hlte.</p>
+  </div>
+</section>
+
+<section id="versuche" class="section sec-id secbg">
+  <div class="wrap fade">
+    <div class="eyebrow">Was nicht funktionierte</div>
+    <h2 class="text-3xl md:text-4xl font-bold" style="margin-top:8px;">Alles, was ich vorher vergeblich probiert habe</h2>
+    <p style="margin-top:18px;">Ich war keine Mutter, die nichts unternommen hat. Im Gegenteil. Ich habe so ziemlich alles ausprobiert, was man mir geraten hat &ndash; und das meiste hat es nur schlimmer gemacht:</p>
+    <ul class="faillist">
+      <li>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+        <div><b>Die gro&szlig;en Kinderkochb&uuml;cher.</b> Wundersch&ouml;ne Fotos, lange Zutatenlisten, exotische Zutaten. Nach einem Arbeitstag hatte ich weder Zeit noch Nerven daf&uuml;r &ndash; und Mats lehnte das Meiste sowieso ab.</div>
+      </li>
+      <li>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+        <div><b>Rezepte aus dem Internet.</b> Stundenlang gescrollt, gespeichert, gekocht &ndash; und dann sa&szlig; er davor und schob es weg. Vieles war einfach nicht auf ein w&auml;hlerisches Kleinkind ausgelegt.</div>
+      </li>
+      <li>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+        <div><b>Gem&uuml;se verstecken.</b> P&uuml;rees untergemischt, Dinge kleingeraspelt. Er hat es jedes Mal gemerkt. Kleinkinder haben ein unheimliches Gesp&uuml;r daf&uuml;r.</div>
+      </li>
+      <li>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+        <div><b>Druck und Belohnungen.</b> &bdquo;Noch drei Bissen, dann gibt's Nachtisch.&ldquo; Das machte die Mahlzeit endg&uuml;ltig zum Machtkampf &ndash; und l&ouml;ste nichts.</div>
+      </li>
+      <li>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+        <div><b>Einfach durchhalten.</b> &bdquo;Wenn er Hunger hat, isst er schon.&ldquo; Hat er nicht. Er ist ins Bett gegangen, ohne richtig gegessen zu haben &ndash; und ich habe mich furchtbar gef&uuml;hlt.</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="tiefpunkt" class="section sec-id">
+  <div class="wrap fade">
+    <h2 class="text-3xl md:text-4xl font-bold">Der Abend, an dem ich aufgeben wollte</h2>
+    <p>Es gab einen Dienstag, den ich nie vergessen werde. Ich hatte etwas Neues gekocht, mir M&uuml;he gegeben, und Mats hatte den Teller wieder weggeschoben, ohne hinzusehen. Ich stand in der K&uuml;che, hatte den Kochl&ouml;ffel noch in der Hand &ndash; und f&uuml;r einen Moment kamen mir einfach die Tr&auml;nen.</p>
+    <p>Nicht wegen des Essens. Wegen allem. Wegen der M&uuml;digkeit, der Sorge, dem Gef&uuml;hl, dass ich es einfach nicht hinbekam, etwas so Grundlegendes wie meinem Kind eine gute Mahlzeit hinzustellen.</p>
+    <div class="callout">&bdquo;In diesem Moment dachte ich nicht: Mit meinem Kind stimmt etwas nicht. Ich dachte: Mit mir stimmt etwas nicht. Und das war der Punkt, an dem ich falsch lag.&ldquo;</div>
+    <p>Sp&auml;ter an diesem Abend, als Mats schlief, sa&szlig; ich noch am K&uuml;chentisch und dachte zum ersten Mal einen anderen Gedanken: Was, wenn nicht ich das Problem bin und auch nicht er &ndash; sondern einfach das, was ich ihm hinstelle?</p>
+  </div>
+</section>
+
+<section id="entdeckung" class="section sec-id secbg">
+  <div class="wrap fade">
+    <div class="eyebrow">Der Wendepunkt</div>
+    <h2 class="text-3xl md:text-4xl font-bold" style="margin-top:8px;">Die kleine Erkenntnis, die alles ver&auml;nderte</h2>
+    <p style="margin-top:18px;">Eine Freundin, deren Tochter genauso w&auml;hlerisch gewesen war, sagte mir etwas, das h&auml;ngen blieb: &bdquo;Ich habe aufgeh&ouml;rt, allgemeine Kinderrezepte zu suchen. Ich habe angefangen, gezielt nach Rezepten zu kochen, die f&uuml;r w&auml;hlerische Kleinkinder gemacht sind.&ldquo;</p>
+    <p>Das klingt nach einem winzigen Unterschied. Aber genau dieser Unterschied war alles. Die meisten Rezepte richten sich an &bdquo;Kinder&ldquo; allgemein &ndash; vom Baby bis zum Schulkind, von allesessend bis w&auml;hlerisch. Sie ber&uuml;cksichtigen nicht, dass ein dreij&auml;hriger w&auml;hlerischer Esser ganz eigene, vorhersehbare Abneigungen hat: bestimmte Texturen, unbekannte Optik, zu viel auf einmal Vermischtes.</p>
+    <figure class="fig ratio16">
+      <div class="imgbox">
+        <img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/littlebites-ad/discovery_1782513127539.png" alt="Zwei M&uuml;tter im Gespr&auml;ch am K&uuml;chentisch">
+      </div>
+      <figcaption class="cap">Ein Gespr&auml;ch unter M&uuml;ttern &ndash; und pl&ouml;tzlich ergab alles einen anderen Sinn.</figcaption>
+    </figure>
+    <p>Sie schickte mir eine kleine Sammlung von Rezepten, die genau auf diese Altersgruppe und ihre typischen &bdquo;Mag-ich-nicht&ldquo;-Muster abgestimmt war. Kein dickes Buch. Kein Aufwand. Nur einfache, getestete Gerichte. Ich war skeptisch &ndash; aber ehrlich gesagt hatte ich auch nichts mehr zu verlieren.</p>
+  </div>
+</section>
+
+<section id="funktioniert" class="section sec-id">
+  <div class="wrap fade">
+    <h2 class="text-3xl md:text-4xl font-bold">Warum genau das funktioniert</h2>
+    <p>Als ich das erste dieser Rezepte kochte, fiel mir sofort etwas auf: Es war nicht kompliziert. Wenige Zutaten, alles davon kannte Mats vom Aussehen her, und die Zubereitung dauerte keine zwanzig Minuten. Ich musste nichts verstecken, nichts verhandeln.</p>
+    <p>Und dann passierte etwas, das ich monatelang nicht erlebt hatte: Er probierte. Einfach so. Weil das Essen f&uuml;r ihn nicht bedrohlich aussah, weil es ihm vertraut genug war und weil ich nicht angespannt daneben stand und auf das &bdquo;Mag ich nicht&ldquo; wartete.</p>
+    <p>Das ist der ganze Trick, wie ich heute verstehe. W&auml;hlerische Kleinkinder lehnen nicht aus Trotz ab. Sie lehnen ab, was unbekannt, un&uuml;bersichtlich oder texturm&auml;&szlig;ig &uuml;berfordernd wirkt. Wenn die Rezepte genau das ber&uuml;cksichtigen &ndash; einfache Optik, vertraute Bausteine, klare Zubereitung &ndash; sinkt die H&uuml;rde, &uuml;berhaupt einen Bissen zu nehmen.</p>
+    <p>Und sobald der erste Bissen freiwillig kommt, ver&auml;ndert sich die ganze Stimmung am Tisch. Es geht nicht mehr ums Durchsetzen. Es geht wieder ums Essen.</p>
+  </div>
+</section>
+
+<section id="produkt" class="section sec-id secbg">
+  <div class="wrap fade">
+    <div class="eyebrow">Was daraus wurde</div>
+    <h2 class="text-3xl md:text-4xl font-bold" style="margin-top:8px;">Was littlebites ist</h2>
+    <p style="margin-top:18px;">Aus dieser kleinen Rezeptsammlung wurde mit der Zeit etwas Gr&ouml;&szlig;eres &ndash; ein kompaktes Mini-Ebook namens <b>littlebites</b>: &bdquo;25 Rezepte f&uuml;r kleine Picky Eater&ldquo;. Auf 20 bis 25 Seiten stecken 25 getestete Rezepte, die gezielt f&uuml;r w&auml;hlerische Kleinkinder zwischen zwei und f&uuml;nf Jahren gemacht sind &ndash; nicht f&uuml;r Kinder allgemein.</p>
+    <p>Es ist genau das, was ich damals gebraucht h&auml;tte: kein dickes Buch zum Durchbl&auml;ttern, sondern ein schlanker Wochenalltags-Retter, den man abends in zwei Minuten aufschl&auml;gt und sofort losger kochen kann.</p>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="badge">1</div>
+        <span class="tag">Gezielt ausgew&auml;hlt</span>
+        <h3 class="text-xl font-bold" style="margin:0 0 8px;">F&uuml;r w&auml;hlerische Esser</h3>
+        <p style="margin:0;color:var(--body);font-size:16px;">Die Rezepte sind explizit auf die typischen Abneigungen von 2- bis 5-J&auml;hrigen abgestimmt &ndash; nicht auf Kinder im Allgemeinen.</p>
+      </div>
+      <div class="feat">
+        <div class="badge">2</div>
+        <span class="tag">Alltagstauglich</span>
+        <h3 class="text-xl font-bold" style="margin:0 0 8px;">Schnell &amp; einfach</h3>
+        <p style="margin:0;color:var(--body);font-size:16px;">Wenige Zutaten, klare Anleitungen, kurze Zubereitung &ndash; gemacht f&uuml;r den Feierabend nach einem langen Arbeitstag.</p>
+      </div>
+      <div class="feat">
+        <div class="badge">3</div>
+        <span class="tag">Kompakt</span>
+        <h3 class="text-xl font-bold" style="margin:0 0 8px;">20&ndash;25 Seiten</h3>
+        <p style="margin:0;color:var(--body);font-size:16px;">Kein langes Suchen, kein Bl&auml;ttern. Aufschlagen, ausw&auml;hlen, kochen &ndash; direkt im Wochenalltag anwendbar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="verlauf" class="section sec-id">
+  <div class="wrap fade">
+    <h2 class="text-3xl md:text-4xl font-bold">Wie sich die Wochen ver&auml;nderten</h2>
+    <p style="margin-top:14px;">Ich will ehrlich sein: Es war kein Schalter, der umgelegt wurde. Aber es ver&auml;nderte sich Woche f&uuml;r Woche &ndash; und das war es, was mir die Zuversicht zur&uuml;ckgab.</p>
+    <div class="tl">
+      <div class="tl-item">
+        <span class="tl-num">1</span>
+        <div>
+          <h3 class="text-xl font-bold" style="margin:0 0 6px;">Die ersten Tage</h3>
+          <p style="margin:0;color:var(--body);">Ich kochte zwei der einfachsten Rezepte. Beim ersten probierte Mats freiwillig &ndash; ein winziger Moment, aber f&uuml;r mich riesig. Ich h&ouml;rte auf, anzusch&auml;rfen und Druck zu machen.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-num">2</span>
+        <div>
+          <h3 class="text-xl font-bold" style="margin:0 0 6px;">Woche zwei</h3>
+          <p style="margin:0;color:var(--body);">Wir hatten schon vier Gerichte, die zuverl&auml;ssig funktionierten. Die abendliche Anspannung wurde sp&uuml;rbar weniger, weil ich nicht mehr ins Ungewisse kochte.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-num">3</span>
+        <div>
+          <h3 class="text-xl font-bold" style="margin:0 0 6px;">Woche vier</h3>
+          <p style="margin:0;color:var(--body);">Mats fing an, neue Dinge anzunehmen, weil das Essen f&uuml;r ihn nicht mehr mit Stress verbunden war. Endlich kam wieder Abwechslung auf den Teller &ndash; auch Gem&uuml;se.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-num">4</span>
+        <div>
+          <h3 class="text-xl font-bold" style="margin:0 0 6px;">Nach zwei Monaten</h3>
+          <p style="margin:0;color:var(--body);">Das Abendessen war keine Schlacht mehr. Wir sa&szlig;en zusammen am Tisch, redeten, lachten. Genau das, was eine Mahlzeit eigentlich sein sollte &ndash; und was uns so lange gefehlt hatte.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stimmen" class="section sec-id secbg">
+  <div class="wrap fade">
+    <div class="eyebrow">Erfahrungen anderer Eltern</div>
+    <h2 class="text-3xl md:text-4xl font-bold" style="margin-top:8px;">Was andere Eltern erlebt haben</h2>
+    <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px;">
+      <div style="font-size:46px;font-weight:700;color:var(--heading);line-height:1;">4,8</div>
+      <div>
+        <span class="stars">
+          <svg viewBox="0 0 24 24" fill="#D3C5B6"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="#D3C5B6"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="#D3C5B6"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="#D3C5B6"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="#D3C5B6"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
+        </span>
+        <div style="font-size:14px;color:#8a837b;">Bewertungen berufst&auml;tiger Eltern</div>
+      </div>
+    </div>
+    <div style="margin-top:20px;max-width:340px;">
+      <div class="dist"><span>5</span><div class="bar"><span style="width:86%"></span></div></div>
+      <div class="dist"><span>4</span><div class="bar"><span style="width:11%"></span></div></div>
+      <div class="dist"><span>3</span><div class="bar"><span style="width:2%"></span></div></div>
+      <div class="dist"><span>2</span><div class="bar"><span style="width:1%"></span></div></div>
+      <div class="dist"><span>1</span><div class="bar"><span style="width:0%"></span></div></div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev">
+        <div class="rev-head">
+          <span class="av"><img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/littlebites-ad/rev1_1782513127539.png" alt="Sandra K."></span>
+          <div><b style="color:var(--heading);">Sandra K.</b><div style="font-size:13px;color:#8a837b;">Mutter, Tochter 3 Jahre</div></div>
+        </div>
+        <span class="stars"><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg></span>
+        <p style="margin:10px 0 0;color:var(--body);font-size:16px;">&bdquo;Endlich Rezepte, die wirklich auf w&auml;hlerische Kleinkinder ausgelegt sind. Meine Tochter hat schon mehrere davon freiwillig gegessen &ndash; das war vorher undenkbar.&ldquo;</p>
+      </div>
+      <div class="rev">
+        <div class="rev-head">
+          <span class="av"><img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/littlebites-ad/rev2_1782513127539.png" alt="Tobias M."></span>
+          <div><b style="color:var(--heading);">Tobias M.</b><div style="font-size:13px;color:#8a837b;">Vater, Sohn 4 Jahre</div></div>
+        </div>
+        <span class="stars"><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg></span>
+        <p style="margin:10px 0 0;color:var(--body);font-size:16px;">&bdquo;Genau das Richtige f&uuml;r den Feierabend. Schnell, ohne komplizierte Zutaten. Wir haben jetzt endlich mehr als zwei Gerichte im Repertoire.&ldquo;</p>
+      </div>
+      <div class="rev">
+        <div class="rev-head">
+          <span class="av"><img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/littlebites-ad/rev3_1782513127539.png" alt="Jana R."></span>
+          <div><b style="color:var(--heading);">Jana R.</b><div style="font-size:13px;color:#8a837b;">Mutter, Sohn 2 Jahre</div></div>
+        </div>
+        <span class="stars"><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg></span>
+        <p style="margin:10px 0 0;color:var(--body);font-size:16px;">&bdquo;Was mir am meisten geholfen hat: Die Anspannung vor dem Essen ist weg. Ich wei&szlig; jetzt vorher, dass es klappt.&ldquo;</p>
+      </div>
+      <div class="rev">
+        <div class="rev-head">
+          <span class="av"><img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/littlebites-ad/rev4_1782513127539.png" alt="Petra W."></span>
+          <div><b style="color:var(--heading);">Petra W.</b><div style="font-size:13px;color:#8a837b;">Mutter, Tochter 5 Jahre</div></div>
+        </div>
+        <span class="stars"><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24" fill="#D3C5B6" width="15"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg></span>
+        <p style="margin:10px 0 0;color:var(--body);font-size:16px;">&bdquo;Kompakt und ohne Schn&ouml;rkel. Genau das wollte ich &ndash; kein 300-Seiten-Buch, sondern Rezepte, die ich sofort umsetzen kann.&ldquo;</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section sec-id">
+  <div class="wrap">
+    <div class="offer fade" id="offer">
+      <div class="eyebrow" style="text-align:center;">Sofort als Mini-Ebook verf&uuml;gbar</div>
+      <h2 class="text-2xl md:text-3xl font-bold" style="text-align:center;margin:8px 0 12px;">littlebites &ndash; 25 Rezepte f&uuml;r kleine Picky Eater</h2>
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:nowrap;margin-bottom:24px;">
+        <span class="stars">
+          <svg viewBox="0 0 24 24" fill="#D3C5B6"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="#D3C5B6"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="#D3C5B6"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="#D3C5B6"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="#D3C5B6"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
+        </span>
+        <span style="font-weight:700;color:var(--heading);white-space:nowrap;">4,8 / 5</span>
+        <span style="font-size:13px;color:#8a837b;white-space:nowrap;">&middot; von Eltern geliebt</span>
+      </div>
+
+      <img class="prod-img" src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/littlebites-ad/product-sheets_1782513127539.png" alt="littlebites Rezepte als ausgedruckte Bl&auml;tter">
+
+      <ul class="benf">
+        <li>
+          <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><b style="color:var(--heading);">25 getestete Rezepte</b><div style="font-size:15px;color:var(--body);">Speziell f&uuml;r w&auml;hlerische Kleinkinder von 2 bis 5 Jahren ausgew&auml;hlt.</div></div>
+        </li>
+        <li>
+          <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><b style="color:var(--heading);">Schnell im Wochenalltag</b><div style="font-size:15px;color:var(--body);">Wenige Zutaten, klare Anleitungen, schnell zubereitet nach dem Arbeitstag.</div></div>
+        </li>
+        <li>
+          <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><b style="color:var(--heading);">Kompakt &amp; sofort nutzbar</b><div style="font-size:15px;color:var(--body);">20&ndash;25 Seiten ohne langes Suchen &ndash; aufschlagen und loskochen.</div></div>
+        </li>
+        <li>
+          <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><b style="color:var(--heading);">Mehr Ruhe am Esstisch</b><div style="font-size:15px;color:var(--body);">Weniger Machtk&auml;mpfe, mehr Abwechslung auf dem Teller deines Kindes.</div></div>
+        </li>
+      </ul>
+
+      <div class="price-row">
+        <span class="price-now">EUR&nbsp;17,97</span>
+        <span class="price-old">EUR&nbsp;24,99</span>
+        <span class="save">Du sparst 28&nbsp;%</span>
+      </div>
+
+      <a class="btn" href="https://www.etsy.com/de/listing/4480707329/keine-schreie-beim-essen-25-clevere?ref=shop_home_active_1&dd=1&logging_key=fe117e37c5f4d2a5562304e9719a4979cddef11d%3A4480707329" style="margin-top:18px;">
+        Jetzt sichern
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+
+      <ul class="trust">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sofort verf&uuml;gbar nach dem Kauf</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Alle Rezepte praktisch im Familienalltag getestet</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#375230" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Kompaktes Format, direkt umsetzbar</li>
+      </ul>
+
+      <div class="meta-row">
+        <div class="meta-cell"><div class="big">25</div><div class="sm">Rezepte</div></div>
+        <div class="meta-cell"><div class="big">2&ndash;5 J.</div><div class="sm">Altersgruppe</div></div>
+        <div class="meta-cell"><div class="big">20&ndash;25</div><div class="sm">Seiten</div></div>
+      </div>
+      <p style="font-size:13px;color:#8a837b;text-align:center;margin:20px 0 0;">Mit dem Anspruch, dir einen echten Wochenalltags-Retter an die Hand zu geben &ndash; Rezepte, die kleine w&auml;hlerische Esser tats&auml;chlich annehmen.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section sec-id secbg">
+  <div class="wrap fade">
+    <div class="eyebrow">Noch Fragen?</div>
+    <h2 class="text-3xl md:text-4xl font-bold" style="margin-top:8px;margin-bottom:22px;">H&auml;ufige Fragen</h2>
+
+    <div class="faq-item">
+      <button class="faq-q">Funktioniert das auch bei meinem besonders w&auml;hlerischen Kind?<svg viewBox="0 0 24 24" fill="none" stroke="#484237" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a"><p>Genau daf&uuml;r wurden die Rezepte ausgew&auml;hlt. Sie ber&uuml;cksichtigen die typischen Abneigungen von w&auml;hlerischen 2- bis 5-J&auml;hrigen &ndash; vertraute Optik, einfache Texturen, klare Bausteine. Jedes Kind ist anders, aber viele Eltern berichten, dass ihre Kinder Gerichte daraus freiwillig probiert haben, die sie sonst abgelehnt h&auml;tten.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Ich habe kaum Zeit zum Kochen &ndash; ist das aufwendig?<svg viewBox="0 0 24 24" fill="none" stroke="#484237" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a"><p>Nein. Die Rezepte sind bewusst f&uuml;r berufst&auml;tige Eltern gemacht: wenige Zutaten, klare Anleitungen, schnelle Zubereitung. Es geht darum, nach einem langen Arbeitstag etwas auf den Tisch zu bringen, ohne lange in der K&uuml;che zu stehen.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Was bekomme ich genau?<svg viewBox="0 0 24 24" fill="none" stroke="#484237" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a"><p>Du erh&auml;ltst das Mini-Ebook littlebites mit 25 getesteten Rezepten auf 20 bis 25 Seiten. Ein kompaktes, schnell lesbares Format, das du direkt im Wochenalltag anwenden kannst &ndash; ohne langes Suchen oder Bl&auml;ttern.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">F&uuml;r welches Alter sind die Rezepte gedacht?<svg viewBox="0 0 24 24" fill="none" stroke="#484237" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a"><p>Speziell f&uuml;r Kinder zwischen 2 und 5 Jahren, die w&auml;hlerisch essen. Anders als allgemeine Kinderkochb&uuml;cher konzentriert sich littlebites genau auf diese enge Altersgruppe und ihre typischen Vorlieben.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Brauche ich besondere Zutaten?<svg viewBox="0 0 24 24" fill="none" stroke="#484237" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a"><p>Nein. Die Rezepte setzen bewusst auf alltagstaugliche, vertraute Zutaten &ndash; nichts Exotisches, das erst beschafft werden muss. Das macht es kindgerecht und gleichzeitig praktisch f&uuml;r dich.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Wie schnell kann ich loslegen?<svg viewBox="0 0 24 24" fill="none" stroke="#484237" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a"><p>Das Mini-Ebook ist nach dem Kauf sofort verf&uuml;gbar. Du kannst es noch am selben Abend aufschlagen, ein Rezept ausw&auml;hlen und direkt loskochen.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="final">
+  <div class="wrap fade">
+    <h2 class="text-3xl md:text-4xl font-bold" style="margin-bottom:14px;">Dein Esstisch darf wieder ein sch&ouml;ner Ort werden</h2>
+    <p style="color:var(--heading);font-size:19px;max-width:560px;margin:0 auto 28px;">Ich h&auml;tte mir damals so sehr gew&uuml;nscht, dass mir jemand einfach die richtigen Rezepte in die Hand dr&uuml;ckt. Genau das ist littlebites.</p>
+    <a class="btn" href="https://www.etsy.com/de/listing/4480707329/keine-schreie-beim-essen-25-clevere?ref=shop_home_active_1&dd=1&logging_key=fe117e37c5f4d2a5562304e9719a4979cddef11d%3A4480707329" style="max-width:320px;margin:0 auto;background:var(--secondary);">
+      Jetzt sichern
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</div>
+
+<footer class="wrap" style="padding:48px 22px;text-align:center;color:#9a938b;font-size:13.5px;">
+  <p style="font-weight:600;color:var(--heading);margin-bottom:10px;">littlebites &middot; 25 Rezepte f&uuml;r kleine Picky Eater</p>
+  <p style="max-width:600px;margin:0 auto;">Dieser Beitrag ist ein Erfahrungsbericht und enth&auml;lt Werbung. Die geschilderte Geschichte spiegelt eine pers&ouml;nliche Erfahrung wider; individuelle Ergebnisse k&ouml;nnen abweichen, da jedes Kind unterschiedlich isst. littlebites ersetzt keine ern&auml;hrungsmedizinische Beratung. Bei anhaltenden Essproblemen oder Sorgen um die Ern&auml;hrung deines Kindes wende dich bitte an deine Kinder&auml;rztin oder deinen Kinderarzt.</p>
+</footer>
+
+<div class="sticky">
+  <div class="sval"><b>littlebites &ndash; 25 Rezepte f&uuml;r kleine Picky Eater</b><br>Nur EUR&nbsp;17,97 statt EUR&nbsp;24,99</div>
+  <a href="#offer">Jetzt sichern &rarr;</a>
+</div>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var a=btn.nextElementSibling;
+      var open=btn.classList.contains('open');
+      btn.classList.toggle('open');
+      a.style.maxHeight=open?null:a.scrollHeight+'px';
+    });
+  });
+  if(window.matchMedia&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12});
+    document.querySelectorAll('.fade').forEach(function(el){io.observe(el);});
+  }else{
+    document.querySelectorAll('.fade').forEach(function(el){el.classList.add('in');});
+  }
+</script>
+
+</body>
+</html>
